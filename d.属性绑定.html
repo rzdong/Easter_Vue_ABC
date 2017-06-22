@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>toWayBlinding</title>
+	<style>
+		.one {
+			color: #f00;
+		}
+		.two {
+			color: #0f0;
+		}
+		p {
+			font-size: 25px;
+		}
+	</style>
+</head>
+<body >
+<div id="app">
+	<p v-bind:class="{one: redColor}">如果不出意外的话，我是红色的</p>
+	<p v-bind:class="{two: greenColor}">如果不出意外的话，我是绿色的</p>
+	<p>对对对，你俩都不会出意外</p>
+</div>
+<script>
+var app
+window.onload = function (){
+		app = new Vue({
+			el: '#app',
+			data: {
+				greenColor: true,
+				redColor: true
+			}
+		})
+}
+</script>
+</body>
+	<script src="./vue.js"></script>
+</html>

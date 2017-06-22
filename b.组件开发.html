@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>组件化开发</title>
+	<link rel="stylesheet" type="text/css" href="b/main.css">
+</head>
+<body>
+<div id="app">
+	<span class="header">请开始你的表演</span>
+	<input type="text" placeholder="edit me" v-model="text_message" v-on:keyup.enter="addOne">
+	<ul>
+		<first-component v-for="(item, index) in message" 
+						:value="item" :i="index" 
+						v-on:deleteobject="subThisObject" 
+						v-on:changeobject="changeThisObject"
+						:key="item.text">	
+		</first-component>
+	</ul>
+	<div v-if="status" class="changespace">
+		<input type="text" v-model="change_text">
+		<button v-on:click="done">保存修改</button>
+		<button v-on:click="status = !status">取消</button>
+	</div>
+</div>
+<script type="text/javascript" src="b/main.js"></script>
+</body>
+<script type="text/javascript" src="vue.js"></script>
+</html>
